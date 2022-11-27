@@ -1,7 +1,6 @@
 import { type AppType } from 'next/app';
 import { type Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
-import { OpenCvProvider } from 'opencv-react';
 
 import { trpc } from '../utils/trpc';
 
@@ -13,9 +12,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <OpenCvProvider>
-        <Component {...pageProps} />
-      </OpenCvProvider>
+      <Component {...pageProps} />
     </SessionProvider>
   );
 };
